@@ -1,0 +1,33 @@
+{
+  "name": "recap_tasks_week-10",
+  "version": "1.0.0",
+  "description": "- Authentication\r - Reducer\r - Genric Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "task1": "jest -- task-1/index.test.js",
+    "task2": "jest -- task-2/index.test.js",
+    "task3": "parcel task-3/index.html",
+    "task4": "parcel task-4/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SchoolOfCode/recap_tasks_week-10.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SchoolOfCode/recap_tasks_week-10/issues"
+  },
+  "homepage": "https://github.com/SchoolOfCode/recap_tasks_week-10#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "parcel": "^1.12.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
