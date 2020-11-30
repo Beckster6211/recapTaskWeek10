@@ -2,8 +2,12 @@
 
 /* Task 2.1 - Return an array containing all of the item names: ['potatoes', 'chocolate', 'cheese', 'beer', 'lettuce']*/
 
-function getItemList() {}
-
+function getItemList() {
+  return groceries.reduce((acc, cur) => {
+    acc + cur;
+  }, []);
+}
+getItemList();
 /* Task 2.2 - Return the total value of all of the items as a number: 9 */
 
 function calculateTotalCost() {}
