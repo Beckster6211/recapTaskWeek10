@@ -54,7 +54,7 @@ function verifyToken(token) {
   return jwt.verify(
     token,
     jwtSecret,
-    { exxpiresIn: "1h" },
+    { expiresIn: "1h" },
     function (error, decoded) {
       if (error) {
         console.log(error);
