@@ -8,7 +8,7 @@ and returns the hashed password. Use the `saltRounds` variable when hashing the 
 
 async function hashPassword(password) {
   const hash = await bcrypt.hash(password, saltRounds);
-  console.log({ hash });
+  //console.log({ hash });
   return hash;
 }
 
@@ -19,7 +19,7 @@ password matches a hashed password, and false if it does not. */
 
 async function comparePassword(password, hashed) {
   const result = await bcrypt.compare(password, hashed);
-  console.log({ result });
+  //console.log({ result });
   return result;
 }
 comparePassword(
@@ -32,7 +32,7 @@ containing the data passed. Sign the token with `jwtSecret` variable required at
 
 function signToken(data) {
   const token = jwt.sign(data, jwtSecret, { expiresIn: "1h" });
-  console.log({ token });
+  //console.log({ token });
   return token;
 }
 
@@ -46,11 +46,25 @@ function verifyToken(token) {
   //     console.log({ decoded });
   //     return decoded;
   //   });
-  if (jwt.verify(token, jwtSecret)) {
-    return decoded;
-  } else {
-    throw error;
-  }
+  // if (jwt.verify(token, jwtSecret)) {
+  //   return decoded;
+  // } else {
+  //   throw error;
+  // }
+  return jwt.verify(
+    token,
+    jwtSecret,
+    { exxpiresIn: "1h" },
+    function (error, decoded) {
+      if (error) {
+        console.log(error);
+        return error;
+      } else {
+        console.log(decoded);
+        return decoded;
+      }
+    }
+  );
 }
 verifyToken();
 
