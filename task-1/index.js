@@ -54,7 +54,7 @@ function verifyToken(token) {
   return jwt.verify(
     token,
     jwtSecret,
-    { expiresIn: "1h" },
+    { maxAge: "1h" },
     function (error, decoded) {
       if (error) {
         console.log(error);
@@ -65,6 +65,7 @@ function verifyToken(token) {
       }
     }
   );
+  //return jwt.verify(token, jwtSecret, { maxAge: "1h" });
 }
 verifyToken();
 

@@ -36,7 +36,7 @@ function getItemList() {
 getItemList();
 /* Task 2.2 - Return the total value of all of the items as a number: 9 */
 
-function calculateTotalCost() {
+function calculateTotalCost(groceries) {
   return groceries.reduce((acc, cur) => acc + cur.price, 0);
 }
 
@@ -49,13 +49,32 @@ function calculateTotalCost() {
 
 */
 
-function tallyHealthyFoods() {
-  return groceries.reduce((acc, cur) => {
-    if (acc[cur.healthy] === true) {
-      cur + 1;
-    }
-    return acc;
-  }, {});
+function tallyHealthyFoods(groceries) {
+  // return groceries.reduce(
+  //   (acc, cur) => {
+  //     //     //   if (acc[cur.healthy] === true) {
+  //     //     //     cur + 1;
+  //     //     //   }
+  //     //     //   return acc;
+  //     //     // }, {});
+  //     if (cur.healthy === true) {
+  //       healthy = acc.healthy + 1;
+  //       console.log(healthy);
+  //     } else {
+  //       unhealthy = acc.healthy + 1;
+  //       console.log(unhealthy);
+  //     }
+  //   },
+  //   { healthy: 0, unhealthy: 0 }
+  // );
+  return groceries.reduce(
+    (acc, cur) => {
+      cur.healthy //=== true
+        ? { ...acc, healthy: acc.healthy + 1 }
+        : { ...acc, unhealthy: acc.unhealthy + 1 };
+    },
+    { healthy: 0, unhealthy: 0 }
+  );
 }
 
 module.exports = {
